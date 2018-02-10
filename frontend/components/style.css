@@ -1,0 +1,26 @@
+body {
+  background-color: rgb(254, 252, 240);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-container {
+  max-width: 220px;
+  height: 95px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed black;
+}
+
+.img-container > div > div {
+  font-size: 12px;
+}
+
+.back-payment-method {
+  background-color: rgb(249, 222, 145);
+}

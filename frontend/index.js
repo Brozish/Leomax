@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-import Root from './components/Root';
+import Root from 'Components/Root';
 
 ReactDom.render(
   <Root />,
