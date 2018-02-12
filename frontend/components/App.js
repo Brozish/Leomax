@@ -5,7 +5,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Container } from 'reactstrap';
 
 import NotFound from './route/NotFound';
-import ListPaymentMethod from 'Components/ListPaymentMethod';
+import Subscription from 'Components/Subscription';
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.css';
@@ -17,7 +17,7 @@ export default class App extends React.Component {
         <Container>
           <Switch>
             <Redirect exact from = '/' to = '/subscription' />
-            <Route exact path = '/subscription' component = {ListPaymentMethod} />
+            <Route exact path = '/subscription' component = {Subscription} />
             <Route component = {NotFound} />
           </Switch>
         </Container>

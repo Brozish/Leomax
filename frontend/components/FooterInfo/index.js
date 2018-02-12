@@ -14,8 +14,8 @@ export default class FooterInfo extends React.Component {
     return (
       <Col>
         <Media>
-          <Media left className="align-self-center mr-3">
-            <Media object src={src} />
+          <Media left className = "align-self-center mr-3">
+            <Media object src = {src} />
           </Media>
           <Media body>
             {text}

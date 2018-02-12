@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CardImg, Col } from 'reactstrap';
+import { Col } from 'reactstrap';
 
 export default class PaymentMethod extends React.Component {
   static propTypes = {
@@ -10,8 +10,9 @@ export default class PaymentMethod extends React.Component {
         PropTypes.string
       ]).isRequired,
       link: PropTypes.string.isRequired,
-      unlink: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired
+      unlink: PropTypes.string,
+      text: PropTypes.string,
+      subText: PropTypes.string
     }),
     toggleState: PropTypes.func.isRequired,
     isSelected: PropTypes.bool.isRequired
@@ -25,8 +26,8 @@ export default class PaymentMethod extends React.Component {
     }
 
     return (
-      <Col lg={3} md={3} sm={6} xs={12}>
-        <div className={this.getClassName(isSelected)} onClick = {toggleState}>
+      <Col lg = {3} md = {3} sm = {6} xs = {12}>
+        <div className = {this.getClassName(isSelected)} onClick = {toggleState}>
           {this.getElem(isSelected, paymentMethod)}
         </div>
       </Col>
@@ -34,17 +35,17 @@ export default class PaymentMethod extends React.Component {
   }
 
   getClassName(isSelected) {
-    let className = 'img-container';
+    let className = 'payment-container';
 
-    return isSelected ? className + ' back-payment-method' : className;
+    return isSelected ? className + ' back-payment-style' : className;
   }
 
   getElem(isSelected, paymentMethod) {
     return paymentMethod.link ?
       <img src = {isSelected ? paymentMethod.link : paymentMethod.unlink } /> :
-      <div className="text-center">
+      <div className = "text-center">
         {paymentMethod.text}
-        <div className="text-muted">{paymentMethod.subText}</div>
+        <div className = "text-muted">{paymentMethod.subText}</div>
       </div>;
   }
 }

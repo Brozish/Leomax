@@ -1,5 +1,6 @@
 body {
   background-color: rgb(254, 252, 240);
+  font-weight: bold;
 }
 
 img {
@@ -7,7 +8,7 @@ img {
   height: auto;
 }
 
-.img-container {
+.payment-container {
   max-width: 220px;
   height: 95px;
   margin: 10px auto;
@@ -17,10 +18,20 @@ img {
   border: 1px dashed black;
 }
 
-.img-container > div > div {
+.payment-container > div > div {
   font-size: 12px;
 }
 
-.back-payment-method {
+.back-payment-style {
   background-color: rgb(249, 222, 145);
+}
+
+.color-payment-date-rezult {
+  color: rgb(133, 85, 75);
+}
+
+.card-style {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

@@ -2,19 +2,34 @@ import React from 'react';
 
 export default OriginalComponent => class SwitchingSelectComponents extends React.Component {
   state = {
-    selectItemId: ''
+    selectPaymentMethodId: '',
+    selectPaymentDateId: ''
   };
 
   render() {
     return (
-      <OriginalComponent {...this.props} {...this.state} toggleState = {this.toggleState} />
+      <OriginalComponent
+        {...this.props}
+        {...this.state}
+        toggleStatePaymentMethodId = {this.toggleStatePaymentMethodId}
+        toggleStatePaymentDateId = {this.toggleStatePaymentDateId}
+      />
     );
   }
 
-  toggleState = itemId => event => {
+  toggleStatePaymentMethodId = paymentMethodId => event => {
     event.preventDefault();
     this.setState({
-      selectItemId: itemId === this.state.selectItemId ? '' : itemId
+      selectPaymentMethodId: paymentMethodId === this.state.selectPaymentMethodId ?
+        '' : paymentMethodId
+    });
+  }
+
+  toggleStatePaymentDateId = paymentDateId => event => {
+    event.preventDefault();
+    this.setState({
+      selectPaymentDateId: paymentDateId === this.state.selectPaymentDateId ?
+        '' : paymentDateId
     });
   }
 }
