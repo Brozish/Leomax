@@ -35,3 +35,7 @@ img {
   top: 0;
   right: 0;
 }
+
+.margin-button-submit {
+  margin: 20px 0;
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'reactstrap';
 
+import { PRESENT_ID } from 'constants';
+
 export default class PaymentMethod extends React.Component {
   static propTypes = {
     paymentMethod: PropTypes.shape({
@@ -15,13 +17,18 @@ export default class PaymentMethod extends React.Component {
       subText: PropTypes.string
     }),
     toggleState: PropTypes.func.isRequired,
-    isSelected: PropTypes.bool.isRequired
+    isSelected: PropTypes.bool.isRequired,
+    present: PropTypes.bool.isRequired
   };
 
   render() {
-    const { paymentMethod, toggleState, isSelected } = this.props;
+    const { paymentMethod, toggleState, isSelected, present } = this.props;
 
     if (!paymentMethod) {
+      return null;
+    }
+
+    if (present && +paymentMethod.id === PRESENT_ID) {
       return null;
     }
 

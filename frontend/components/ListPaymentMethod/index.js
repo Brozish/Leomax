@@ -10,7 +10,9 @@ class ListPaymentMethod extends React.Component {
   static propTypes = {
     paymentMethods: PropTypes.array.isRequired,
     selectPaymentMethodId: PropTypes.string.isRequired,
-    toggleStatePaymentMethodId: PropTypes.func.isRequired
+    toggleStatePaymentMethodId: PropTypes.func.isRequired,
+    present: PropTypes.bool.isRequired,
+    reset: PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -20,25 +22,29 @@ class ListPaymentMethod extends React.Component {
   }
 
   render() {
-    const { paymentMethods, toggleStatePaymentMethodId: toggleState, selectPaymentMethodId } = this.props;
+    const {
+      paymentMethods, toggleStatePaymentMethodId: toggleState,
+      selectPaymentMethodId, present, reset
+    } = this.props;
 
     return (
       <React.Fragment>
         <Col>Выберите способ оплаты</Col>
         <Row>
-          {this.getPaymentMethods(paymentMethods, toggleState, selectPaymentMethodId)}
+          {this.getPaymentMethods(paymentMethods, toggleState, selectPaymentMethodId, present, reset)}
         </Row>
       </React.Fragment>
     );
   }
 
-  getPaymentMethods(paymentMethods, toggleState, selectPaymentMethodId) {
+  getPaymentMethods(paymentMethods, toggleState, selectPaymentMethodId, present, reset) {
     return paymentMethods.map( item => {
       return <PaymentMethod
         key = {item.id}
         paymentMethod = {item}
-        toggleState = {toggleState(item.id)}
+        toggleState = {toggleState(item.id, reset)}
         isSelected = {item.id === selectPaymentMethodId}
+        present = {present}
       />;
     });
   }

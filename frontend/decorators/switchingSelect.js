@@ -17,8 +17,9 @@ export default OriginalComponent => class SwitchingSelectComponents extends Reac
     );
   }
 
-  toggleStatePaymentMethodId = paymentMethodId => event => {
+  toggleStatePaymentMethodId = (paymentMethodId, reset) => event => {
     event.preventDefault();
+    reset();
     this.setState({
       selectPaymentMethodId: paymentMethodId === this.state.selectPaymentMethodId ?
         '' : paymentMethodId
