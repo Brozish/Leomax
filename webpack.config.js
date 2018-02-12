@@ -33,6 +33,10 @@ module.exports = {
       {
          test: /\.css$/,
          use: ['style-loader', 'css-loader']
+      },
+      {
+          test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+          loader: 'url-loader'
       }
     ]
   },
@@ -42,7 +46,8 @@ module.exports = {
       Components: path.resolve(__dirname, 'frontend/components'),
       Redux: path.resolve(__dirname, 'frontend/redux'),
       Decorators: path.resolve(__dirname, 'frontend/decorators'),
-      constants$: path.resolve(__dirname, 'frontend/constants/index.js')
+      constants$: path.resolve(__dirname, 'frontend/constants/index.js'),
+      Fonts: path.resolve(__dirname, 'public/fonts')
     }
   }
 }

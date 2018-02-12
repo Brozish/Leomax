@@ -42,7 +42,7 @@ class Cost extends React.Component {
       resultText += ' + 150 = ' + result;
     }
 
-    return <Col>{resultText} руб.</Col>;
+    return <Col className = "result-font-size">{resultText} руб.</Col>;
   }
 }
 

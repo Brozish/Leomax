@@ -17,7 +17,7 @@ export default class FooterInfo extends React.Component {
           <Media left className = "align-self-center mr-3">
             <Media object src = {src} />
           </Media>
-          <Media body>
+          <Media body className = "text-muted">
             {text}
           </Media>
         </Media>

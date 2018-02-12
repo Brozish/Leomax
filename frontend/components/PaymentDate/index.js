@@ -45,7 +45,7 @@ export default class PaymentDate extends React.Component {
       <React.Fragment>
         <Col xs = {12}>{paymentDate.date}</Col>
         <Col className = "color-payment-date-rezult" xs = {12}>{+paymentDate.month * +paymentDate.cost}</Col>
-        <Col xs = {12}>{paymentDate.cost} руб./мес.</Col>
+        <Col className = "payment-date-font-size" xs = {12}>{paymentDate.cost} руб./мес.</Col>
         <img className = "card-style" src = {paymentDate.link} />
       </React.Fragment>
     );
